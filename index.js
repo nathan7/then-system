@@ -18,10 +18,10 @@ function os(bin, args, opts) {
       bin = args.shift()
     }
 
-    var myOpts = opts
-        ? Object.create(opts)
-        : {}
-    myOpts.stdio = [process.stdin, process.stdout, 'pipe']
+    opts = opts
+      ? Object.create(opts)
+      : {}
+    opts.stdio = [process.stdin, process.stdout, 'pipe']
 
     var child = spawn(bin, args, opts)
       , stderr = sprom(stderr)
