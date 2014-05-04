@@ -3,6 +3,7 @@ var Promise = require('promise')
   , spawn = require('child_process').spawn
   , sprom = require('sprom')
 
+module.exports =
 function os(bin, args, opts) {
   return new Promise(function(resolve, reject) {
     if (!Array.isArray(args)) {
