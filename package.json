@@ -1,0 +1,26 @@
+{
+  "name": "then-system",
+  "version": "1.0.0",
+  "description": "the system() you've been missing",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nathan7/then-system.git"
+  },
+  "keywords": [
+    "system",
+    "os",
+    "spawn",
+    "utility"
+  ],
+  "author": "Nathan Zadoks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathan7/then-system/issues"
+  },
+  "homepage": "https://github.com/nathan7/then-system",
+  "dependencies": {
+    "promise": "^5.0.0",
+    "sprom": "^2.0.2"
+  }
+}
