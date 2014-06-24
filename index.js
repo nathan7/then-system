@@ -2,6 +2,7 @@
 var Promise = require('promise')
   , spawn = require('child_process').spawn
   , sprom = require('sprom')
+  , errorCode = require('exit-error')
 
 module.exports =
 function os(bin, args, opts) {
@@ -32,14 +33,8 @@ function os(bin, args, opts) {
     child.on('exit', function(code, signal) {
       if (code === 0 && !signal) return resolve()
       stderr.then(function(stderr) {
-        var err = signal
-          ? new Error('`' + name + '` killed by signal `' + signal + '`')
-          : new Error('`' + name + '` exited with ' + code)
-
-        err.name = 'ExitError'
+        var err = errorCode(code, signal)
         err.message += ': ' + stderr
-        err.code = code
-        err.signal = signal
         err.stderr = stderr
 
         reject(err)
