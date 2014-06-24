@@ -1,6 +1,6 @@
 {
   "name": "then-system",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "the system() you've been missing",
   "main": "index.js",
   "repository": {
